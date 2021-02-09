@@ -1,1 +1,17 @@
-<p>calendar works!</p>
+<div *ngIf="calendar" class="calendar">
+    <div class="week">
+        <div class="week-day-title">Mon.</div>
+        <div class="week-day-title">Tue.</div>
+        <div class="week-day-title">Wen.</div>
+        <div class="week-day-title">Thu.</div>
+        <div class="week-day-title">Fri.</div>
+        <div class="week-day-title">Sat.</div>
+        <div class="week-day-title">Sun.</div>
+
+    </div>
+    <div class="week" *ngFor="let week of calendar.weeks; let i = index">
+        <div *ngFor="let day of week" class="day">
+            <app-day [day]="day"></app-day>
+        </div>
+    </div>
+</div>

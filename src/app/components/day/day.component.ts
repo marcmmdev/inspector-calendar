@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Day } from 'src/app/models/day.model';
 
 @Component({
   selector: 'app-day',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DayComponent implements OnInit {
 
+  @Input('day') day: Day;
+  
   constructor() { }
 
   ngOnInit(): void {

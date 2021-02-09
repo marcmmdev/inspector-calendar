@@ -1,0 +1,32 @@
+.calendar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 750px;
+    .week {
+        display: flex;
+        .day {
+            border: 1px solid #e6e6e6;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 150px;
+            width: 150px;
+        }
+
+        .week-day-title {
+            color: #040450;
+            font-size: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            font-weight: bold;
+            height: 40px;
+            width: 150px;
+        }
+    }
+}

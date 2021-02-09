@@ -6,6 +6,8 @@ import { CalendarComponent } from './components/calendar/calendar.component';
 import { DayComponent } from './components/day/day.component';
 import { WeatherComponent } from './components/weather/weather.component';
 import { CalendarSelectorsComponent } from './components/calendar-selectors/calendar-selectors.component';
+import { WeatherService } from './services/weather.service';
+import { InspectionService } from './services/inspection.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,10 @@ import { CalendarSelectorsComponent } from './components/calendar-selectors/cale
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    WeatherService,
+    InspectionService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
