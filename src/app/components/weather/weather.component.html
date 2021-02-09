@@ -10,6 +10,6 @@
         </div>
     </ng-container>
     <div class="temperature">
-        {{currentWeather.main.temp_min}} ºC
+        {{currentWeather.main.temp_min | number: '1.0-0'}} ºC
     </div>
 </div>

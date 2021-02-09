@@ -10,6 +10,7 @@ import { CalendarSelectorsComponent } from './components/calendar-selectors/cale
 import { WeatherService } from './services/weather.service';
 import { InspectionService } from './services/inspection.service';
 import { FormsModule } from '@angular/forms';
+import { CommonModule, DecimalPipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -17,16 +18,18 @@ import { FormsModule } from '@angular/forms';
     CalendarComponent,
     DayComponent,
     WeatherComponent,
-    CalendarSelectorsComponent
-  ],
+    CalendarSelectorsComponent,
+    ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CommonModule
   ],
   providers: [
     WeatherService,
-    InspectionService
+    InspectionService,
+    DecimalPipe
   ],
   bootstrap: [AppComponent]
 })
