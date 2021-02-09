@@ -1,9 +1,7 @@
 export class Temperature {
-    day: number;
-    eve: number;
-    max: number;
-    min: number;
-    morn: number;
-    night: number;
+    feels_like: number;
+    temp: number;
+    temp_max: number;
+    temp_min: number;
     roundedMin: number;
 }

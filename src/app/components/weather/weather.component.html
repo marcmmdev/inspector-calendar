@@ -1,15 +1,15 @@
-<div class="weather-container" *ngIf="weather">
+<div class="weather-container" *ngIf="currentWeather">
     <ng-container *ngIf="weatherIcons && weatherIcons.length > 0">
         <div class="weather-icons-container">
             <div class="weather-icon" *ngFor="let weatherIcon of weatherIcons">
                 <img [src]="weatherIcon">
             </div>
         </div>
-        <div class="weather-description" *ngFor="let w of weather.weather">
+        <div class="weather-description" *ngFor="let w of currentWeather.weather">
             {{w.description}}
         </div>
     </ng-container>
     <div class="temperature">
-        {{weather.temp.roundedMin}} ºC
+        {{currentWeather.main.temp_min}} ºC
     </div>
 </div>

@@ -4,7 +4,7 @@
     </div>
 
     <div class="weather" *ngIf="day.dayWeather">
-        <app-weather [weather]="day.dayWeather"></app-weather>
+        <app-weather [weather]="day.dayWeather" [isToday]="isToday"></app-weather>
     </div>
 </div>
 
