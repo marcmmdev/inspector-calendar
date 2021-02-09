@@ -8,6 +8,7 @@ import { WeatherComponent } from './components/weather/weather.component';
 import { CalendarSelectorsComponent } from './components/calendar-selectors/calendar-selectors.component';
 import { WeatherService } from './services/weather.service';
 import { InspectionService } from './services/inspection.service';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { InspectionService } from './services/inspection.service';
     CalendarSelectorsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [
     WeatherService,
