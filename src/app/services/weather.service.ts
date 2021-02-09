@@ -13,15 +13,8 @@ export class WeatherService {
 
     constructor(private http: HttpClient) {}
 
-    getSevenDaysForecast() {       
-        return this.http.get<Forecast>(
-            this.weatherBaseUrl + '/onecall?lat=41.367700&lon=2.056030&exclude=current,minutely,hourly,alerts&units=metric&appid='+
-             this.WEATHER_API_KEY);
-    }
-
     getFiveDaysForecast() {       
       return this.http.get<Forecast>(
-          this.weatherBaseUrl + '/forecast?lat=41.367700&lon=2.056030&units=metric&appid='+
-           this.WEATHER_API_KEY);
+          this.weatherBaseUrl + '/forecast?lat=41.367700&lon=2.056030&units=metric&appid='+this.WEATHER_API_KEY);
   }
 }
