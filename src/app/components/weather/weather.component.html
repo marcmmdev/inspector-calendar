@@ -1,1 +1,15 @@
-<p>weather works!</p>
+<div class="weather-container" *ngIf="weather">
+    <ng-container *ngIf="weatherIcons && weatherIcons.length > 0">
+        <div class="weather-icons-container">
+            <div class="weather-icon" *ngFor="let weatherIcon of weatherIcons">
+                <img [src]="weatherIcon">
+            </div>
+        </div>
+        <div class="weather-description" *ngFor="let w of weather.weather">
+            {{w.description}}
+        </div>
+    </ng-container>
+    <div class="temperature">
+        {{weather.temp.roundedMin}} ºC
+    </div>
+</div>

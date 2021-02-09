@@ -1,0 +1,24 @@
+.weather-icon {
+    img {
+        width: 45px;
+    }
+}
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.weather-description {
+    color: #000000d4;
+    font-size: 0.8rem;
+    margin-top: -10px;
+}
+
+.temperature {
+    margin-top: 5px;
+    font-size: 1rem;
+    color: #000000d4;
+}

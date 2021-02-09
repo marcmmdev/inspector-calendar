@@ -2,5 +2,9 @@
     <div class="day" [ngClass]="{'current-day': isToday}">
         {{day.date.format('DD')}}
     </div>
+
+    <div class="weather" *ngIf="day.dayWeather">
+        <app-weather [weather]="day.dayWeather"></app-weather>
+    </div>
 </div>
 
