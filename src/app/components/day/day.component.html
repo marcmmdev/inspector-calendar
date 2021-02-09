@@ -1,1 +1,6 @@
-{{day.date.format('DD')}}
+<div class="day-container">
+    <div class="day" [ngClass]="{'current-day': isToday}">
+        {{day.date.format('DD')}}
+    </div>
+</div>
+
