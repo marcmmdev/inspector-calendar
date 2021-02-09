@@ -15,18 +15,22 @@ import { WeatherService } from 'src/app/services/weather.service';
 export class CalendarComponent implements OnInit {
 
   public calendar: Calendar;
+  public inspectionDays: moment.Moment[];
 
   constructor(private weatherService: WeatherService,
     private inspectionService: InspectionService) { }
 
   ngOnInit(): void {
     moment.locale('es');
+    // Retrieve mock data for inspectionDays
+    this.inspectionDays = this.inspectionService.getInspectionDays();
     this.initCalendar(moment(new Date()));
   }
 
   initCalendar(date: any) {
     this.calendar = new Calendar();
     this.fillCalendar(date);
+    this.setInspectionDays();
     if (this.isDateCurrentMonth(date)) {
       this.getForecast();
     } 
@@ -79,6 +83,21 @@ export class CalendarComponent implements OnInit {
       day.dayWeather = forecast.daily[index];
     });
     
+  }
+
+  public setInspectionDays() {
+    this.inspectionDays.forEach(date => {
+      const inspectionDayIndex = this.calendar.days.findIndex((day) => {
+        if (day.date.format('DD/MM/YYYY') === date.format('DD/MM/YYYY')) {
+          return day;
+        }
+      });
+      
+      if (inspectionDayIndex != -1) {
+        this.calendar.days[inspectionDayIndex].inspectionAssigned = true;
+      }
+
+    });
   }
 
 }

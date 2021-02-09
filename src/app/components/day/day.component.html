@@ -1,5 +1,5 @@
 <div class="day-container">
-    <div class="day" [ngClass]="{'current-day': isToday}">
+    <div class="day" [ngClass]="{'current-day': isToday, 'inspection-assigned': day.inspectionAssigned}">
         {{day.date.format('DD')}}
     </div>
 
