@@ -32,7 +32,7 @@ export class WeatherComponent implements OnInit {
     }
   }
 
-  private setCurrentWeatherForecast() {
+  public setCurrentWeatherForecast() {
     // We get 8 forecasts for the day on the API but
     // On the current day, we only get the forecasts ahead of our current time
     // To simplify, the calendar will always show the info closer to the 
