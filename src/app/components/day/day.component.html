@@ -1,4 +1,4 @@
-<div class="day-container">
+<div class="day-container" *ngIf="day">
     <div class="day" [ngClass]="{'current-day': isToday, 'inspection-assigned': day.inspectionAssigned}">
         {{day.date | date : 'dd'}}
     </div>
