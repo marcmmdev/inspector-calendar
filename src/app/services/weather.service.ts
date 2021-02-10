@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Forecast } from '../models/forecast.model';
 import { environment } from './../../environments/environment';
@@ -8,13 +8,20 @@ import { environment } from './../../environments/environment';
 })
 export class WeatherService {
 
-  private weatherBaseUrl = 'http://api.openweathermap.org/data/2.5';
-  private WEATHER_API_KEY = environment.WEATHER_API_KEY;
+  public weatherBaseUrl = 'http://api.openweathermap.org/data/2.5';
+  public WEATHER_API_KEY = environment.WEATHER_API_KEY;
 
     constructor(private http: HttpClient) {}
 
     getFiveDaysForecast() {       
-      return this.http.get<Forecast>(
-          this.weatherBaseUrl + '/forecast?lat=41.367700&lon=2.056030&units=metric&appid='+this.WEATHER_API_KEY);
+      const headers = new HttpHeaders();
+      headers.append('Content-Type', 'application/json');
+      const params = new HttpParams()
+        .set('lat', '41.367700')
+        .set('lon','2.056030')
+        .set('units', 'metric')
+        .set('appid', this.WEATHER_API_KEY);
+
+      return this.http.get<Forecast>(this.weatherBaseUrl + '/forecast', {headers: headers, params: params});
   }
 }
