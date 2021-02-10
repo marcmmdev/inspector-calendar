@@ -15,7 +15,9 @@ export class DayComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.checkDateIsToday();
+    if (this.day) {
+      this.checkDateIsToday();
+    }
   }
   
   public checkDateIsToday() {
