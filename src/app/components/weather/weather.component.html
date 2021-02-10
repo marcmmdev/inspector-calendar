@@ -1,0 +1,15 @@
+<div class="weather-container" *ngIf="currentWeather">
+    <ng-container *ngIf="weatherIcons && weatherIcons.length > 0">
+        <div class="weather-icons-container">
+            <div class="weather-icon" *ngFor="let weatherIcon of weatherIcons">
+                <img [src]="weatherIcon">
+            </div>
+        </div>
+        <div class="weather-description" *ngFor="let w of currentWeather.weather">
+            {{w.description}}
+        </div>
+    </ng-container>
+    <div class="temperature">
+        {{currentWeather.main.temp_min | number: '1.0-0'}} ºC
+    </div>
+</div>

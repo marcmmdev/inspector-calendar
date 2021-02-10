@@ -1,0 +1,23 @@
+.day-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+.current-day {
+    color: #040450;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border: 2px solid #040450;
+    text-align: center;
+}
+
+.inspection-assigned {
+    color: red;
+    font-weight: bold;
+}

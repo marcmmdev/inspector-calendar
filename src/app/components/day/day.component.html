@@ -1,0 +1,8 @@
+<div class="day-container" *ngIf="day">
+    <div class="day" [ngClass]="{'current-day': isToday, 'inspection-assigned': day.inspectionAssigned}">
+        {{day.date | date : 'dd'}}
+    </div>
+    <div class="weather" *ngIf="day.dayWeather">
+        <app-weather [weather]="day.dayWeather" [isToday]="isToday"></app-weather>
+    </div>
+</div>

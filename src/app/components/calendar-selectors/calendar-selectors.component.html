@@ -1,0 +1,13 @@
+<div class="selector-container">
+    <select [(ngModel)]="selectedMonth" class="select-box" (change)="changeDates()">
+        <option *ngFor="let m of months; let i = index" [value]="i">
+            {{m}}
+        </option>
+    </select>
+    
+    <select [(ngModel)]="selectedYear" class="select-box" (change)="changeDates()">
+        <option *ngFor="let y of years" [value]="y">
+            {{y}}
+        </option>
+    </select>
+</div>
