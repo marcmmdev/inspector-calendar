@@ -22,4 +22,18 @@ describe('CalendarSelectorsComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have two select boxes', () => {
+    const selectBoxes = document.getElementsByClassName('select-box').length;
+    expect(selectBoxes).toBe(2);
+  });
+
+  it ('should have years array populated', () => {
+    expect(component.years).toBeTruthy();
+  });
+
+  it ('should have months array populated', () => {
+    expect(component.months).toBeTruthy();
+  });
+  
 });
